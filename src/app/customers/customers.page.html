@@ -2,9 +2,9 @@
 <ion-content>
 
   <ion-grid class="ion-margin-top">
-    <ion-item lines="none" color="light">
-      <ion-label class="title">Popular</ion-label>
-      <ion-button slot="end" size="small" shape="round" color="primary">View all</ion-button>
+    <ion-item lines="none" color="secundary">
+      <ion-label class="title"  >Popular</ion-label>
+      <ion-button slot="end" size="small" shape="round" color="primary">Vista General</ion-button>
     </ion-item>
     <ion-row>
       <ion-slides [options]="slideOpts">
@@ -13,7 +13,7 @@
             <ion-card-header>
               <ion-label>
                 {{item?.name}}
-                <p>₹{{item?.price}}</p>
+                <p>Bs.{{item?.price}}</p>
               </ion-label>
             </ion-card-header>
             <ion-card-content>
@@ -27,8 +27,8 @@
 
   <ion-grid class="ion-margin-top">
     <ion-item lines="none" color="light">
-      <ion-label class="title">Featured Plants</ion-label>
-      <ion-button slot="end" size="small" shape="round" color="primary">View all</ion-button>
+      <ion-label class="title">Productos Destacados   </ion-label>
+      <ion-button slot="end" size="small" shape="round" color="primary">Vista General</ion-button>
     </ion-item>
     <ion-row>
       <ion-slides [options]="slideOpts1">
@@ -43,7 +43,7 @@
                   {{item?.name}}
                   <p><ion-text color="tertiary">{{item?.category}}</ion-text></p>
                 </ion-label>
-                <ion-text class="price" slot="end" color="primary"><b>₹{{item?.price}}</b></ion-text>
+                <ion-text class="price" slot="end" color="primary"><b>Bs.{{item?.price}}</b></ion-text>
               </ion-item>
             </ion-card-content>
           </ion-card>
