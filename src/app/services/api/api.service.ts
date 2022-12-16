@@ -22,9 +22,9 @@ export class ApiService {
   ];
 
   usuarios: any[] = [
-    { id: 1, name: 'Rodrigo', telefono: 78945678, correo: 'rod@gmail.com' },
-    { id: 2, name: 'Carlos', telefono: 78945678, correo: 'carlos@gmail.com' },
-    { id: 3, name: 'Carolina', telefono: 78945678, correo: 'Carolina@gmail.com' },
+    { id: 1, name: 'Rodrigo', telefono: 78945678, correo: 'rod@gmail.com', password: 1234 },
+    { id: 2, name: 'Carlos', telefono: 78945678, correo: 'carlos@gmail.com', password: 1234 },
+    { id: 3, name: 'Carolina', telefono: 78945678, correo: 'Carolina@gmail.com', password: 1234 },
   ];
 
   constructor() { }

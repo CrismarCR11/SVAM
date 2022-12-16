@@ -26,6 +26,7 @@ export class RegistroPage implements OnInit {
     });
   }
 
+  
   ngOnInit() {
   }
 
@@ -42,15 +43,28 @@ export class RegistroPage implements OnInit {
       await alert.present();
       return;
     }
-
+    localStorage.clear();
     var usuario = {
       nombre: f.nombre,
       password: f.password
     }
-    console.log(usuario);
+    var comida = {
+      id: 1,
+      nombre: "pastel",
+      precio: 200
+    }
+    var pedido = {
+      id: 1,
+      nombre: "pastel",
+      precio: 200,
+      cantidad: 2
+    }
+    console.log(comida);
     localStorage.setItem('usuario',JSON.stringify(usuario));
+    localStorage.setItem('comida',JSON.stringify(comida));
+    localStorage.setItem('pedido',JSON.stringify(pedido));
 
-    localStorage.setItem('ingresado','true');
+    //localStorage.setItem('ingresado','true');
     this.navCtrl.navigateRoot('login');
   }
 
