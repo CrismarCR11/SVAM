@@ -6,13 +6,13 @@ import { Injectable } from '@angular/core';
 export class ApiService {
 
   items: any[] = [
-    { id: 3, name: 'Netflix', price: 700, category: 'USA', img: 'assets/imgs/netflix.png' },
-    { id: 3, name: 'Disney Plus', price: 700, category: 'USA', img: 'assets/imgs/disney-plus.jpg' },
+    { id: 1, name: 'Netflix', price: 700, category: 'USA', img: 'assets/imgs/netflix.png' },
+    { id: 2, name: 'Disney Plus', price: 700, category: 'USA', img: 'assets/imgs/disney-plus.jpg' },
     { id: 3, name: 'Star Plus', price: 700, category: 'USA', img: 'assets/imgs/star+.png' },
-    { id: 3, name: 'Iphone 11', price: 700, category: 'USA', img: 'assets/imgs/iphone11.jpg' },
-    { id: 1, name: 'Aloe Plant', price: 700, category: 'INDIA', img: 'assets/imgs/aloe.png' },
-    { id: 2, name: 'Echeveria', price: 500, category: 'INDIA', img: 'assets/imgs/2.png' },
-    { id: 3, name: 'Snake Plant', price: 700, category: 'USA', img: 'assets/imgs/3.png' },
+    { id: 4, name: 'Iphone 11', price: 700, category: 'USA', img: 'assets/imgs/iphone11.jpg' },
+    { id: 5, name: 'Aloe Plant', price: 700, category: 'INDIA', img: 'assets/imgs/aloe.png' },
+    { id: 6, name: 'Echeveria', price: 500, category: 'INDIA', img: 'assets/imgs/2.png' },
+    { id: 7, name: 'Snake Plant', price: 700, category: 'USA', img: 'assets/imgs/3.png' },
   ];
 
   algo: any[] = [
@@ -28,6 +28,10 @@ export class ApiService {
   ];
 
   constructor() { }
-
+  
+  getItem(id: any) {
+    const item = this.items.find(x => x.id == id);
+    return item;
+  }
   
 }

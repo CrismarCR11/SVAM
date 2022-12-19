@@ -16,7 +16,7 @@
     <ion-row>
       <ion-slides [options]="slideOpts">
         <ion-slide *ngFor="let item of popularItems">
-          <ion-card class="bgCard" [routerLink]="['/', 'tabs', 'items', item.id]">
+          <ion-card class="bgCard" [routerLink]="['/', 'items', item.id]">
             <ion-card-header>
               <ion-label>
                 {{item?.name}}
