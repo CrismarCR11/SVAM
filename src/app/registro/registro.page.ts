@@ -61,10 +61,10 @@ export class RegistroPage implements OnInit {
     }
     console.log(comida);
     localStorage.setItem('usuario',JSON.stringify(usuario));
-    localStorage.setItem('comida',JSON.stringify(comida));
-    localStorage.setItem('pedido',JSON.stringify(pedido));
+   // localStorage.setItem('comida',JSON.stringify(comida));
+    //localStorage.setItem('pedido',JSON.stringify(pedido));
 
-    //localStorage.setItem('ingresado','true');
+    localStorage.setItem('ingresado','true');
     this.navCtrl.navigateRoot('login');
   }
 

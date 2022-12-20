@@ -35,7 +35,7 @@
   <ion-item lines="none" class="ion-margin-vertical">
     <ion-label>
       {{item?.name}}
-      <p><ion-text color="tertiary">{{item?.category}}</ion-text></p>
+      <p><ion-text color="tertiary">{{item?.descripcion}}</ion-text></p>
     </ion-label>
     <ion-text class="price" color="primary" slot="end">
       <b>Bs.{{item?.price}}</b>
@@ -48,10 +48,13 @@
   <ion-toolbar>
     <ion-row>
       <ion-col size="6" class="ion-text-center buy">
-        <ion-button (click)="addCart()" fill="clear" color="light">Buy Now</ion-button>
+        
+          <ion-button (click)="addCart()" fill="clear" color="light">Agregar A Carrito</ion-button>
+        
+        
       </ion-col>
       <ion-col size="6" class="ion-text-center">
-        <ion-button fill="clear" color="dark">Description</ion-button>
+        <ion-button fill="clear" color="dark">Descripcion</ion-button>
       </ion-col>
     </ion-row>
   </ion-toolbar>

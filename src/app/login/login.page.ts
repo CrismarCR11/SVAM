@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CartServiceService } from 'src/app/services/api/cart-service.service';
+import { take } from 'rxjs/operators';
 
 import {
   FormGroup,
@@ -15,13 +18,14 @@ import { AlertController, NavController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  
+  item: any;
   formularioLogin: FormGroup;
 
   constructor(public fb: FormBuilder,
     public alertController: AlertController,
     public navCtrl: NavController,
-    public apiService: ApiService) { 
+    public apiService: ApiService,
+    private route: ActivatedRoute,) { 
 
     this.formularioLogin = this.fb.group({
       'nombre': new FormControl("",Validators.required),
@@ -46,8 +50,55 @@ export class LoginPage implements OnInit {
     if(usuario) 
     {var dato=JSON.parse(usuario);
     }
+    console.log("item: ",this.item);
+      const name = f.nombre ;
+      //console.log(name);
+      this.item = this.apiService.getUser(name);
+      //console.log(this.item);
+      
+      if(this.item != undefined)
+      {
+        console.log("hola");
+        if( this.item.name.toLocaleLowerCase()== f.nombre && this.item.password==f.password ){
+          console.log('Ingresado');
+          localStorage.setItem('ingresado','true');
+          localStorage.setItem('usuario',JSON.stringify(this.item));
+          this.navCtrl.navigateRoot('home');
+        }else{
+          const alert = await this.alertController.create({
+            header: 'Datos incorrectos',
+            message: 'Los datos que ingresaste son incorrectos.',
+            buttons: ['Aceptar']
+          });
+      
+          await alert.present();
+        }
+      }
+      else{
+        
+        const alert = await this.alertController.create({
+          header: 'Datos incorrectos',
+          message: 'Los datos que ingresaste son incorrectos.',
+          buttons: ['Aceptar']
+        });
+        await alert.present();
+      }
 
-    this.popularItems.forEach(elemento =>{
+     /* if((dato.nombre == f.nombre && dato.password == f.password) || (this.item.name.toLocaleLowerCase()== f.nombre && this.item.password==f.password && this.item !== undefined) ){
+        console.log('Ingresado');
+        localStorage.setItem('ingresado','true');
+        this.navCtrl.navigateRoot('home');
+      }else{
+        const alert = await this.alertController.create({
+          header: 'Datos incorrectos',
+          message: 'Los datos que ingresaste son incorrectos.',
+          buttons: ['Aceptar']
+        });
+    
+        await alert.present();
+      }*/
+
+    /*this.popularItems.forEach(elemento =>{
       
       if ((elemento.name.toLocaleLowerCase()==f.nombre && elemento.password==f.password) || (dato.nombre == f.nombre && dato.password == f.password)){
         //console.log("hola "+elemento.name);
@@ -59,7 +110,7 @@ export class LoginPage implements OnInit {
         
       }
      
-    });
+    });*/
    
     //ejemplo de resolución.
     
@@ -91,14 +142,14 @@ export class LoginPage implements OnInit {
       console.log('Ingresado');
       localStorage.setItem('ingresado','true');
       this.navCtrl.navigateRoot('home');
-    }else{/*
+    }else{
       const alert = await this.alertController.create({
         header: 'Datos incorrectos',
         message: 'Los datos que ingresaste son incorrectos.',
         buttons: ['Aceptar']
       });
   
-      await alert.present();*/
+      await alert.present();
     }
   }
 

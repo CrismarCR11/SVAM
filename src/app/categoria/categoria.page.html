@@ -26,10 +26,13 @@
             </div>
            
             <div class="card-body">
-                <div class="table-responsive">
+                <div class="table-responsive" *ngFor="let item of popularItems">
                     <table class="table table-bordered table striped mt-1">
                         <thead class="text-white" style="background:#3b3f5c;">
                             <tr>
+                                <th class="table-th text-while" style="color: #d5dfe9">
+                                    NOMBRE
+                                </th>
                                 <th class="table-th text-while" style="color: #d5dfe9">
                                     DESCRIPCION
                                 </th>
@@ -47,10 +50,13 @@
                             
                             <tr>
                                 <td>
-                                    <h6>Comida</h6>
+                                    <h6>{{item?.name}}</h6>
                                 </td>
                                 <td class="text-center">
-                                    <h6>algo</h6>
+                                    <h6>{{item?.category}}</h6>
+                                </td>
+                                <td>
+                                    <h6>{{item?.descripcion}}</h6>
                                 </td>
                                 <td class="text-center">
                                     <!--   --> 

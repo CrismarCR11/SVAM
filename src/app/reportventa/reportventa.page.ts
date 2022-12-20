@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api/api.service';
 
 @Component({
-  selector: 'app-categoria',
-  templateUrl: './categoria.page.html',
-  styleUrls: ['./categoria.page.scss'],
+  selector: 'app-reportventa',
+  templateUrl: './reportventa.page.html',
+  styleUrls: ['./reportventa.page.scss'],
 })
-export class CategoriaPage implements OnInit {
+export class ReportventaPage implements OnInit {
 
   popularItems: any[] = [];
   featuredItems: any[] = [];
@@ -14,7 +14,7 @@ export class CategoriaPage implements OnInit {
   constructor(public apiService: ApiService) { }
 
   ngOnInit() {
-    this.popularItems = this.apiService.categoria;
+    this.popularItems = this.apiService.reportventa;
     this.featuredItems = this.apiService.items;
   }
 

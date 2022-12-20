@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { IngresadoGuard } from './ingresado.guard';
+import { NoIngresadoGuard } from './no-ingresado.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -13,7 +15,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'customers',
@@ -21,11 +24,13 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
+    canActivate: [NoIngresadoGuard]
   },
   {
     path: 'registro',
-    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule),
+    canActivate: [NoIngresadoGuard]
   },
   {
     path: 'categoria',
@@ -43,6 +48,18 @@ const routes: Routes = [
   {
     path: 'items/:id',
     loadChildren: () => import('./items/items.module').then( m => m.ItemsPageModule)
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
+  },
+  {
+    path: 'pagoqr',
+    loadChildren: () => import('./pagoqr/pagoqr.module').then( m => m.PagoqrPageModule)
+  },
+  {
+    path: 'reportventa',
+    loadChildren: () => import('./reportventa/reportventa.module').then( m => m.ReportventaPageModule)
   }
 ];
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { ApiService } from 'src/app/services/api/api.service';
+import { CartServiceService } from 'src/app/services/api/cart-service.service';
 import { take } from 'rxjs/operators';
 
 @Component({
@@ -17,7 +18,8 @@ export class ItemsPage implements OnInit {
   constructor(
     public navCtrl: NavController,
     private route: ActivatedRoute,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private cartService: CartServiceService
   ) { }
 
   ngOnInit() {
@@ -30,6 +32,7 @@ export class ItemsPage implements OnInit {
       const id = paramMap.get('id');
       console.log(id);
       this.item = this.apiService.getItem(id);
+      console.log(this.item);
       
     })
     
@@ -38,12 +41,18 @@ export class ItemsPage implements OnInit {
   addCart(){
     
     console.log(this.item.name);
-    /*this.product = {
-      "id":id,
-      "quantity":quantity,
-      "name":this.nombre,
-      "price":this.price,
+    this.product = {
+      "id":this.item.id,
+      "quantity":3,
+      "name":this.item.name,
+      "price":this.item.price,
 
-    }*/
+    }
+    this.cartService.addProduct(this.product);
+    //console.log("product: ", this.product);
+  }
+
+  addItem(){
+  
   }
 }

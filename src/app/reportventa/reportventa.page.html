@@ -1,0 +1,200 @@
+<ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-menu-button auto-hide="false"></ion-menu-button>
+  </ion-buttons>
+  <ion-title>Reporte Ventas</ion-title>
+</ion-toolbar>
+
+<ion-content>
+  <div class="row sales layout-top-spacing">
+    <div class="col-sm-12">
+        <div class="widget">
+            <div class="widget-heading">
+                <h4 class="card-title text-center"><b></b></h4>
+            </div>
+            <div class="widget-content">
+                <div class="row">
+                    <div class="col-sm-12 col-md-3">
+                        <div class="list-group">
+                            <div class="col-sm-12">
+                                <h6> Usuario</h6>
+                                <div class="form-group">
+                                    <select wire:model="userId" class="form-control">
+                                        <option value="0">Carlos</option>
+                                        
+                                            <option value=""></option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+                                <h6>Ventas Totales</h6>
+                                
+                            </div>
+                         
+                      <br>
+
+                            <div class="col-sm-12">
+                                
+
+                                <a class="btn btn-dark btn-block " 
+                                href=""
+                                target="_blank">Generar PDF</a>
+
+                                <a class="btn btn-dark btn-block " 
+                                href=""
+                                target="_blank">Exportar a Excel</a>
+                            </div>
+                           <br>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-9">
+                        <!-- TABLA -->
+                        <div class="table-responsive" *ngFor="let item of popularItems">
+                            <table class="table table-bordered table striped mt-1">
+                                <thead class="text-white" style="background:#3b3f5c;">
+                                    <tr>
+                                        <th class="table-th text-white text-center" >
+                                            FOLIO
+                                        </th>
+                                        <th class="table-th text-white text-center" >
+                                            TOTAL
+                                        </th>
+                                        <th class="table-th text-white text-center" >
+                                            ITEMS
+                                        </th>
+                                        <th class="table-th text-white text-center" >
+                                            ESTATUS
+                                        </th>
+                                        <th class="table-th text-white text-center" >
+                                            USUARIO
+                                        </th>
+                                        <th class="table-th text-white text-center" >
+                                            FECHA
+                                        </th>
+                                        <th class="table-th text-white text-center" width="50px">
+                                            
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                        
+                                    
+                                    <tr>
+                                        <td class="text-center">
+                                            <h6>{{item?.id}}</h6>
+                                        </td>
+                                        <td class="text-center">
+                                            <h6>{{item?.total}}</h6>
+                                        </td>
+                                        <td class="text-center">
+                                            <h6>{{item?.item}}</h6>
+                                        </td>
+                                        <td class="text-center">
+                                            <h6>{{item?.estado}}</h6>
+                                        </td>
+                                        <td class="text-center">
+                                            <h6>{{item?.usuario}}</h6>
+                                        </td>
+                                        <td class="text-center">
+                                            <h6>{{item?.fecha}}</h6>
+                                        </td>
+                                        <td class="text-center" width="50px" >
+                                            <button  class="btn btn-dark btn-sm">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="feather feather-list">
+                                                    <line x1="8" y1="6" x2="21" y2="6">
+                                                    </line>
+                                                    <line x1="8" y1="12" x2="21" y2="12">
+                                                    </line>
+                                                    <line x1="8" y1="18" x2="21" y2="18">
+                                                    </line>
+                                                    <line x1="3" y1="6" x2="3.01" y2="6">
+                                                    </line>
+                                                    <line x1="3" y1="12" x2="3.01" y2="12">
+                                                    </line>
+                                                    <line x1="3" y1="18" x2="3.01" y2="18">
+                                                    </line>
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        flatpickr(document.getElementsByClassName('flatpickr'),{
+            enableTime: false,
+            dateFormat: 'Y-m-d',
+            locale: {
+                firstDayofWeek: 1,
+                weekdays: {
+                    shorthand: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+                    longhand: [
+                    "Domingo",
+                    "Lunes",
+                    "Martes",
+                    "Miércoles",
+                    "Jueves",
+                    "Viernes",
+                    "Sábado",
+                    ],
+                    },
+                    months: {
+                        shorthand: [
+                        "Ene",
+                        "Feb",
+                        "Mar",
+                        "Abr",
+                        "May",
+                        "Jun",
+                        "Jul",
+                        "Ago",
+                        "Sep",
+                        "Oct",
+                        "Nov",
+                        "Dic",
+                        ],
+                        longhand: [
+                        "Enero",
+                        "Febrero",
+                        "Marzo",
+                        "Abril",
+                        "Mayo",
+                        "Junio",
+                        "Julio",
+                        "Agosto",
+                        "Septiembre",
+                        "Octubre",
+                        "Noviembre",
+                        "Diciembre",
+                        ],
+                    },
+            }
+        })
+
+        //eventos
+        window.livewire.on('show-modal', msg=>{
+            $('#modalDetails').modal('show')
+        })
+
+        
+
+    });
+</script>
+</ion-content>
