@@ -64,6 +64,7 @@ export class LoginPage implements OnInit {
           localStorage.setItem('ingresado','true');
           localStorage.setItem('usuario',JSON.stringify(this.item));
           this.navCtrl.navigateRoot('home');
+          location.reload();
         }else{
           const alert = await this.alertController.create({
             header: 'Datos incorrectos',

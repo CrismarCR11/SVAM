@@ -1,7 +1,5 @@
 <ion-toolbar color="primary">
-  <ion-buttons slot="start">
-    <ion-menu-button auto-hide="false"></ion-menu-button>
-  </ion-buttons>
+  
   <ion-title>Registro</ion-title>
 </ion-toolbar>
 
@@ -31,3 +29,11 @@
     </ion-card-content>
   </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/login']">Login</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

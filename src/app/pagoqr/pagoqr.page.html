@@ -1,9 +1,102 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>pagoqr</ion-title>
+    <ion-title>Pago por QR o Tarjeta</ion-title>
+    <ion-button  class="" full round (click)="Salirmodal()">Cerrar</ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="container">
 
+    <form action="">
+
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">Direccion de Envio</h3>
+
+                <div class="inputBox">
+                    <span>Nombre Completo :</span>
+                    <input type="text" placeholder="carlo etc">
+                </div>
+                <div class="inputBox">
+                    <span>email :</span>
+                    <input type="email" placeholder="example@gmail.com">
+                </div>
+                <div class="inputBox">
+                    <span>Direccion :</span>
+                    <input type="text" placeholder="av. siempre viva">
+                </div>
+                <div class="inputBox">
+                    <span>ciudad :</span>
+                    <input type="text" placeholder="Cochabamba">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>pais :</span>
+                        <input type="text" placeholder="Bolivia">
+                    </div>
+                    <div class="inputBox">
+                        <span>codigo postal :</span>
+                        <input type="text" placeholder="0000">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <h3 class="title">pago</h3>
+
+                <div class="inputBox">
+                    <span>tarjetas aceptadas :</span>
+                    <img src="../../assets/imgs/card_img.png" alt="">
+                </div>
+                <div class="inputBox">
+                    <span>nombre de la tarjeta :</span>
+                    <input type="text" placeholder="carlos etc">
+                </div>
+                <div class="inputBox">
+                    <span>numero de tarjeta de credito :</span>
+                    <input type="number" placeholder="1111-2222-3333-4444">
+                </div>
+                <div class="inputBox">
+                    <span>mes de expiracion :</span>
+                    <input type="text" placeholder="diciembre">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>año de expiracion :</span>
+                        <input type="number" placeholder="2022">
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV :</span>
+                        <input type="text" placeholder="1234">
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="col">
+
+                <h3 class="title">QR</h3>
+
+                <div class="inputBox">
+                    <span>Pago con QR :</span>
+                    <img class="qr" src="../../assets/imgs/qr.jpeg" alt="">
+                </div>
+                
+
+            </div>
+        </div>
+
+        <input type="submit" value="Enviar" class="submit-btn">
+
+    </form>
+
+</div> 
+  
 </ion-content>

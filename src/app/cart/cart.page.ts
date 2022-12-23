@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartServiceService } from 'src/app/services/api/cart-service.service';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { PagoqrPage } from '../pagoqr/pagoqr.page';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +16,8 @@ export class CartPage implements OnInit {
 
   constructor(
     private cartService: CartServiceService,
-    private router: Router) { 
+    private router: Router,
+    private modalCtrl:ModalController) { 
     
   }
 
@@ -33,13 +36,24 @@ export class CartPage implements OnInit {
     this.total = this.selectItems.reduce((a:any, b:any) => a+ (b.quantity * b.price), 0);
   }
   
-  presentModal(){
+  async presentModal(){
+    const modal = await this.modalCtrl.create({
+      component: PagoqrPage,
+      componentProps:{
+        nombre:'rodrigo',
+        pais: 'costa rica'
+      }
+    });
+
+    await modal.present();
 
   }
 
   remove(){
     this.cartService.removeCart();
-    this.router.navigate(["/customers"]);
+    
+    //this.router.navigate(["/customers"]);
+    
     
   }
 

@@ -14,6 +14,7 @@ export class ItemsPage implements OnInit {
 
   item: any;
   product: any;
+  quantity =1;
 
   constructor(
     public navCtrl: NavController,
@@ -43,7 +44,7 @@ export class ItemsPage implements OnInit {
     console.log(this.item.name);
     this.product = {
       "id":this.item.id,
-      "quantity":3,
+      "quantity":this.quantity,
       "name":this.item.name,
       "price":this.item.price,
 
@@ -53,6 +54,16 @@ export class ItemsPage implements OnInit {
   }
 
   addItem(){
-  
+    if(this.quantity > 0){
+      this.quantity += 1;
+      
+    }
+  }
+
+  removeItem(){
+    if(this.quantity > 1){
+      this.quantity -= 1;
+      
+    }
   }
 }

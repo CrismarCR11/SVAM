@@ -15,16 +15,14 @@
                     </h4>
                     <ul class="list-group">
                         <li>
-                            <a href="javascript:void(0)" class=" btn btn-dark" >
-                                Agregar
-                            </a>
+                            <ion-button   color="dark"  [routerLink]="['/productomodulo']">Agregar</ion-button>
                         </li>
                     </ul>
       
                 </div>
                 
                 <div class="widget-content">
-                    <div class="table-responsive" *ngFor="let item of popularItems">
+                    <div class="table-responsive" *ngFor="let item of featuredItems">
                         <table class="table table-bordered table striped mt-1">
                             <thead class="text-white" style="background:#3b3f5c;">
                                 <tr>

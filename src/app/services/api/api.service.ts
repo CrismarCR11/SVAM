@@ -6,13 +6,17 @@ import { Injectable } from '@angular/core';
 export class ApiService {
 
   items: any[] = [
-    { id: 1, name: 'Netflix', price: 700, category: 'streaming', descripcion:  'cuenta con 4 dispositivos', img: 'assets/imgs/netflix.png' },
-    { id: 2, name: 'Disney Plus', price: 700, category: 'streaming', descripcion:  'cuenta con 4 dispositivos', img: 'assets/imgs/disney-plus.jpg' },
-    { id: 3, name: 'Star Plus', price: 700, category: 'streaming', descripcion:  'cuenta con 4 dispositivos', img: 'assets/imgs/star+.png' },
-    { id: 4, name: 'Iphone 11', price: 700, category: 'celulares', descripcion:  'nuevo, caja sellada', img: 'assets/imgs/iphone11.jpg' },
-    { id: 5, name: 'Aloe Plant', price: 700, category: 'plantas', descripcion:  'del mas alla',  img: 'assets/imgs/aloe.png' },
-    { id: 6, name: 'Echeveria', price: 500, category: 'plantas', descripcion:  'del mas alla',  img: 'assets/imgs/2.png' },
-    { id: 7, name: 'Snake Plant', price: 700, category: 'plantas', descripcion:  'del mas alla',  img: 'assets/imgs/3.png' },
+    { id: 1, name: 'Netflix', price: 70, category: 'streaming', descripcion:  'cuenta con 4 dispositivos', img: 'assets/imgs/netflix.png' },
+    { id: 2, name: 'Disney Plus', price: 50, category: 'streaming', descripcion:  'cuenta con 4 dispositivos', img: 'assets/imgs/disney-plus.png' },
+    { id: 3, name: 'Star Plus', price: 30, category: 'streaming', descripcion:  'cuenta con 4 dispositivos', img: 'assets/imgs/Star-plus.png' },
+    { id: 4, name: 'Iphone 11', price: 6000, category: 'celulares', descripcion:  'nuevo, caja sellada', img: 'assets/imgs/iphone11.jpg' },
+    { id: 5, name: 'Aloe Plant', price: 100, category: 'plantas', descripcion:  'del mas alla',  img: 'assets/imgs/aloe.png' },
+    { id: 6, name: 'Echeveria', price: 100, category: 'plantas', descripcion:  'del mas alla',  img: 'assets/imgs/2.png' },
+    { id: 7, name: 'Snake Plant', price: 100, category: 'plantas', descripcion:  'del mas alla',  img: 'assets/imgs/3.png' },
+    { id: 8, name: 'Iphone 12', price: 7000, category: 'celular', descripcion:  'nuevo caja sellada',  img: 'assets/imgs/iphone12.jpg' },
+    { id: 9, name: 'Airpods', price: 300, category: 'celular', descripcion:  'nuevo caja sellada',  img: 'assets/imgs/airpods.png' },
+    { id: 10, name: 'Polera Star Wars', price: 150, category: 'plantas', descripcion:  'la fuerza tengo yo',  img: 'assets/imgs/polestar.jpg' },
+    { id: 11, name: 'Polera Couple', price: 300, category: 'plantas', descripcion:  'El par couple',  img: 'assets/imgs/camiseta.jpg' },
   ];
 
   categoria: any[] = [

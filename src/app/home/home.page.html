@@ -3,12 +3,12 @@
   <ion-buttons slot="start">
     <ion-menu-button auto-hide="false"></ion-menu-button>
   </ion-buttons>
-  <ion-title>home</ion-title>
+  <ion-title>Perfil</ion-title>
 </ion-toolbar>
 
 
 
-<ion-content>
+<ion-content class="contenido">
   
   <ion-card class="coworker-card">
     <img src="../../assets/imgs/card-coworker-header.png" class="header-img"/>
@@ -19,21 +19,21 @@
             <img src="../../assets/imgs/card-coworker-avatar.png"/>
           </ion-avatar>
           <ion-label>
-            <h1>Rodrigo</h1>
+            <h1>{{nombre}}</h1>
             <p>Cliente</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-icon name="call" slot="start"></ion-icon>
           <ion-label>
-            <h2>65478954</h2>
-            <p>Celucar</p>
+            <h2>{{celular}}</h2>
+            <p>Celular</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-icon name="mail" slot="start"></ion-icon>
           <ion-label>
-            <h2>Rodrigo@gmail.com</h2>
+            <h2>{{email}}</h2>
             <p>email</p>
           </ion-label>
         </ion-item>

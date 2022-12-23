@@ -3,7 +3,7 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list *ngIf="admin" id="inbox-list">
-          <ion-list-header>Sistema PlusUltra</ion-list-header>
+          <ion-list-header>Sistema PlusUltra Virtual Store</ion-list-header>
           <ion-note>PlusUltra</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
@@ -12,16 +12,30 @@
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item (click)="salir()" routerDirection="root"  lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="'exit-outline'"></ion-icon>
+              <ion-label>Salir</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
 
         <ion-list *ngIf="!admin" id="inbox-list">
           <ion-list-header>Sistema PlusUltra</ion-list-header>
           <ion-note>PlusUltra</ion-note>
 
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages2; let i = index">
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages2; let i = index" >
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item (click)="salir()" routerDirection="root" lines="none" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="'exit-outline'" ></ion-icon>
+              <ion-label>Salir</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

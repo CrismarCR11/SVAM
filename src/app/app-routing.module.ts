@@ -60,6 +60,14 @@ const routes: Routes = [
   {
     path: 'reportventa',
     loadChildren: () => import('./reportventa/reportventa.module').then( m => m.ReportventaPageModule)
+  },
+  {
+    path: 'moduproducto',
+    loadChildren: () => import('./moduproducto/moduproducto.module').then( m => m.ModuproductoPageModule)
+  },
+  {
+    path: 'productomodulo',
+    loadChildren: () => import('./productomodulo/productomodulo.module').then( m => m.ProductomoduloPageModule)
   }
 ];
 

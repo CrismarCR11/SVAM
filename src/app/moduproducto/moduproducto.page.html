@@ -1,0 +1,50 @@
+<ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-menu-button auto-hide="false"></ion-menu-button>
+  </ion-buttons>
+  <ion-title>Agregar Producto</ion-title>
+</ion-toolbar>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Producto</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formularioRegistro" (keyup.enter)="guardarproducto()">
+        <ion-item>
+          <ion-label position="floating">Nombre Producto</ion-label>
+          <ion-input formControlName="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Precio</ion-label>
+          <ion-input formControlName="precio" type="number" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Categoria</ion-label>
+        </ion-item>
+        <ion-item>
+          
+          <select>
+            <option formControlName="categoria">streaming</option>
+            <option formControlName="categoria" selected>celulares</option>
+            <option formControlName="categoria" >plantas</option>
+        </select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">imagen</ion-label>
+        </ion-item>
+        <ion-item>
+          
+          <ion-input formControlName="img" type="file" ></ion-input>
+        </ion-item>
+        
+        
+        <br>
+        <ion-button (click)="guardarproducto()">Agregar
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

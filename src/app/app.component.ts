@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -7,25 +8,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
   admin = false;
   public appPages = [
-    { title: 'home', url: '/home', icon: 'home' },
-    { title: 'customers', url: '/customers', icon: 'people' },
-    { title: 'login', url: '/login', icon: 'people' },
-    { title: 'registro', url: '/registro', icon: 'people' },
-    { title: 'categoria', url: '/categoria', icon: 'category' },
-    { title: 'producto', url: '/producto', icon: 'people' },
-    { title: 'cart', url: '/cart', icon: 'people' },
-    { title: 'reporte venta', url: '/reportventa', icon: 'people' },
+    { title: 'Perfil', url: '/home', icon: 'people' },
+    { title: 'customers', url: '/customers', icon: 'storefront' },
+   
+    { title: 'categoria', url: '/categoria', icon: 'file-tray' },
+    { title: 'producto', url: '/producto', icon: 'bag' },
+    { title: 'reporte venta', url: '/reportventa', icon: 'clipboard' },
   ];
   public appPages2 = [
-    { title: 'home', url: '/home', icon: 'home' },
-    { title: 'customers', url: '/customers', icon: 'people' },
-    { title: 'login', url: '/login', icon: 'people' },
-    { title: 'registro', url: '/registro', icon: 'people' },
+    { title: 'perfil', url: '/home', icon: 'people' },
+    { title: 'customers', url: '/customers', icon: 'storefront' },
     
-    { title: 'cart', url: '/cart', icon: 'people' },
+    
+    { title: 'cart', url: '/cart', icon: 'cart' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {
+  constructor(public navCtrl: NavController,) {
+    
     var usuario = localStorage.getItem('usuario');
 
     //const dato = localStorage.getItem('usuario');
@@ -39,5 +38,11 @@ export class AppComponent {
       
       console.log("hola xd", this.admin);
     }
+  }
+
+  salir(){
+    localStorage.removeItem('usuario');
+    localStorage.removeItem('ingresado');
+    this.navCtrl.navigateRoot('login');
   }
 }

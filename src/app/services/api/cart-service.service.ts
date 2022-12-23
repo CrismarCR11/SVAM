@@ -6,20 +6,34 @@ import { Injectable } from '@angular/core';
 export class CartServiceService {
 
   private cart :any = [];
+  private prodmod :any = [];
   getCart(){
     return this.cart;
   }
 
-  addProduct(caca:any){
+  getProduct(){
+    return this.prodmod;
+  }
+
+  addProduct(product:any){
     //console.log(caca);
-    this.cart.push(caca);
+    this.cart.push(product);
     console.log(this.cart);
+    //localStorage.setItem('caca',JSON.stringify(caca));
+    
+  }
+
+  addProductmod(product:any){
+    //console.log(caca);
+    this.prodmod.push(product);
+    console.log(this.prodmod);
     //localStorage.setItem('caca',JSON.stringify(caca));
     
   }
 
   removeCart(){
     this.cart = [];
+    location.reload();
     console.log(this.cart);
   }
 
